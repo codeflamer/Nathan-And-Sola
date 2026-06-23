@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* ── Custom theme tokens (Tailwind v4) ── */
+@theme {
+  --color-butter: #FDF0CD;
+  --color-cream: #FBF6EE;
+  --color-rose: #C59283;
+  --color-espresso: #3A2B26;
+  --color-rose-dark: #a8735e;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+/* ── Base resets ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FDF0CD;
+  color: #3A2B26;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Fine-line divider utility ── */
+.divider {
+  border: none;
+  border-top: 1px solid #C59283;
+  opacity: 0.4;
+}
+
+/* ── Lightbox body-lock ── */
+body.lightbox-open {
+  overflow: hidden;
+}
