@@ -115,7 +115,7 @@ export const REGISTRY_ITEMS = [
 // Gallery images — replace src with your real photos
 
 const WEDDING_PICTURES = [
-  "/Sola_and_nath_3.jpeg",
+  "/sola_and_nath_3.jpeg",
   "/Solape_Nathan_2.jpg",
   "/solape_Nathan.jpg",
   "/Sola_and_nathan.jpeg",
