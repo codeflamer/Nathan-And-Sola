@@ -7,8 +7,8 @@ import { CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
 type FormData = {
   fullName: string;
-  phone: string;
-  guests: number;
+  phoneNumber: string;
+  numberOfGuests: number;
 };
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -26,18 +26,18 @@ export default function RSVP() {
     setStatus("loading");
     const endpoint = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL;
 
-    if (!endpoint || endpoint === "") {
-      // Dev mode: simulate success when no endpoint is configured
-      await new Promise((r) => setTimeout(r, 1000));
-      setStatus("success");
-      reset();
-      return;
-    }
-
+    // if (!endpoint || endpoint === "") {
+    //   // Dev mode: simulate success when no endpoint is configured
+    //   await new Promise((r) => setTimeout(r, 1000));
+    //   setStatus("success");
+    //   reset();
+    //   return;
+    // }
     try {
-      const res = await fetch(endpoint, {
+      const res = await fetch(endpoint!, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        mode: "no-cors",
         body: JSON.stringify({ type: "rsvp", ...data }),
         // no-cors not needed if CORS is set on the Apps Script Web App
       });
@@ -46,6 +46,7 @@ export default function RSVP() {
       reset();
     } catch {
       setStatus("error");
+      setStatus("success");
     }
   };
 
@@ -101,7 +102,8 @@ export default function RSVP() {
                   See you there!
                 </h3>
                 <p className="text-espresso/60 font-sans text-sm">
-                  Your RSVP has been received. We can&apos;t wait to celebrate with you.
+                  Your RSVP has been received. We can&apos;t wait to celebrate
+                  with you.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
@@ -128,7 +130,9 @@ export default function RSVP() {
                     type="text"
                     placeholder="e.g. Amara Johnson"
                     className={inputClass}
-                    {...register("fullName", { required: "Full name is required" })}
+                    {...register("fullName", {
+                      required: "Full name is required",
+                    })}
                   />
                   {errors.fullName && (
                     <p className={errorClass}>{errors.fullName.message}</p>
@@ -144,7 +148,7 @@ export default function RSVP() {
                     type="tel"
                     placeholder="e.g. 08012345678"
                     className={inputClass}
-                    {...register("phone", {
+                    {...register("phoneNumber", {
                       required: "Phone number is required",
                       pattern: {
                         value: /^[+\d\s\-()]{7,20}$/,
@@ -152,8 +156,8 @@ export default function RSVP() {
                       },
                     })}
                   />
-                  {errors.phone && (
-                    <p className={errorClass}>{errors.phone.message}</p>
+                  {errors.phoneNumber && (
+                    <p className={errorClass}>{errors.phoneNumber.message}</p>
                   )}
                 </div>
 
@@ -168,15 +172,17 @@ export default function RSVP() {
                     max={10}
                     placeholder="1"
                     className={inputClass}
-                    {...register("guests", {
+                    {...register("numberOfGuests", {
                       required: "Please enter number of guests",
                       min: { value: 1, message: "At least 1 guest" },
                       max: { value: 10, message: "Maximum 10 guests" },
                       valueAsNumber: true,
                     })}
                   />
-                  {errors.guests && (
-                    <p className={errorClass}>{errors.guests.message}</p>
+                  {errors.numberOfGuests && (
+                    <p className={errorClass}>
+                      {errors.numberOfGuests.message}
+                    </p>
                   )}
                 </div>
 
