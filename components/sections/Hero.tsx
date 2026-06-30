@@ -2,7 +2,12 @@
 
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { COUPLE, HERO_IMAGE, SCRIPTURE } from "@/lib/config";
+import {
+  COUPLE,
+  HERO_IMAGE,
+  SCRIPTURE,
+  HERO_IMAGE_DESKTOP,
+} from "@/lib/config";
 
 export default function Hero() {
   return (
@@ -15,13 +20,24 @@ export default function Hero() {
         — Replace HERO_IMAGE in lib/config.ts with your photo path (e.g. "/images/hero.jpg")
         — The gradient below is the fallback when no image is set
       */}
-      {HERO_IMAGE ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={HERO_IMAGE}
-          alt="Solape and Nathan"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+      {HERO_IMAGE || HERO_IMAGE_DESKTOP ? (
+        <>
+          {/* Desktop image (lg and above) */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={HERO_IMAGE}
+            alt="Solape and Nathan"
+            className="absolute inset-0 w-full h-full object-cover lg:hidden"
+          />
+
+          {/* Mobile image (below lg) */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={HERO_IMAGE_DESKTOP}
+            alt="Solape and Nathan"
+            className="absolute inset-0 w-full h-full object-contain hidden lg:block"
+          />
+        </>
       ) : (
         <div className="absolute inset-0 bg-gradient-to-br from-espresso via-espresso/90 to-rose/60" />
       )}

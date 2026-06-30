@@ -1,14 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart, Glasses, PartyPopper, MapPin, Clock, Sparkles } from "lucide-react";
-import {
-  CEREMONY,
-  COCKTAIL,
-  RECEPTION,
-  DRESS_CODE,
-  COUPLE,
-} from "@/lib/config";
+import { Heart, PartyPopper, MapPin, Clock, Sparkles } from "lucide-react";
+import { CEREMONY, RECEPTION, DRESS_CODE, COUPLE } from "@/lib/config";
 
 const events = [
   {
@@ -19,14 +13,6 @@ const events = [
     address: CEREMONY.address,
     mapsUrl: CEREMONY.mapsUrl,
   },
-  // {
-  //   icon: Glasses,
-  //   title: "Cocktail Hour",
-  //   time: COCKTAIL.time,
-  //   venue: COCKTAIL.note,
-  //   address: "",
-  //   mapsUrl: null,
-  // },
   {
     icon: PartyPopper,
     title: "Reception",
@@ -39,10 +25,10 @@ const events = [
 
 export default function WeddingDetails() {
   return (
-    <section id="details" className="bg-butter py-20 md:py-28 px-5">
+    <section id="details" className="bg-cream py-20 md:py-28 px-5">
       <div className="max-w-4xl mx-auto">
         {/* Heading */}
-        <motion.div
+        {/* <motion.div
           className="text-center mb-14"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,11 +45,10 @@ export default function WeddingDetails() {
           <p className="mt-5 text-espresso/70 font-sans text-sm tracking-wide">
             {COUPLE.date}
           </p>
-        </motion.div>
+        </motion.div> */}
 
         {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line (desktop) */}
+        {/* <div className="relative">
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-rose/25 -translate-x-1/2" />
 
           <div className="space-y-10 md:space-y-0">
@@ -80,7 +65,7 @@ export default function WeddingDetails() {
                   transition={{ duration: 0.6, delay: i * 0.1 }}
                   className="md:grid md:grid-cols-2 md:gap-12 md:mb-14 items-center"
                 >
-                  {/* Card */}
+               
                   <div
                     className={`bg-cream rounded-2xl p-6 shadow-sm ${
                       isRight
@@ -129,7 +114,7 @@ export default function WeddingDetails() {
                     )}
                   </div>
 
-                  {/* Centre dot (desktop) */}
+                
                   <div
                     className={`hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-rose border-4 border-butter`}
                     style={{ top: `calc(${i} * (100% / 3) + 2rem)` }}
@@ -138,17 +123,17 @@ export default function WeddingDetails() {
               );
             })}
           </div>
-        </div>
+        </div> */}
 
         {/* Dress code */}
         <motion.div
-          className="mt-14 text-center"
+          className="mt-0 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <hr className="divider mb-8" />
+          {/* <hr className="divider mb-8" /> */}
           <p className="text-xs text-rose tracking-[0.3em] uppercase font-sans mb-6">
             Dress Code
           </p>

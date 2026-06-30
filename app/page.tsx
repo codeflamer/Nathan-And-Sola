@@ -19,12 +19,12 @@ export default function Home() {
       <main>
         <Hero />
         <OurStory />
-        <WeddingDetails />
         <Gallery />
+        <WellWishes />
         <Gifting />
         <Registry />
         <RSVP />
-        <WellWishes />
+        <WeddingDetails />
       </main>
       <Footer />
     </>

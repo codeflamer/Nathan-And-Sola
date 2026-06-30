@@ -161,31 +161,6 @@ export default function RSVP() {
                   )}
                 </div>
 
-                {/* Guests */}
-                <div>
-                  <label className="block text-xs text-espresso/60 font-sans uppercase tracking-wider mb-2">
-                    Number of Guests *
-                  </label>
-                  <input
-                    type="number"
-                    min={1}
-                    max={10}
-                    placeholder="1"
-                    className={inputClass}
-                    {...register("numberOfGuests", {
-                      required: "Please enter number of guests",
-                      min: { value: 1, message: "At least 1 guest" },
-                      max: { value: 10, message: "Maximum 10 guests" },
-                      valueAsNumber: true,
-                    })}
-                  />
-                  {errors.numberOfGuests && (
-                    <p className={errorClass}>
-                      {errors.numberOfGuests.message}
-                    </p>
-                  )}
-                </div>
-
                 {/* Error banner */}
                 {status === "error" && (
                   <div className="flex items-center gap-2 text-red-500 text-sm font-sans bg-red-50 rounded-xl px-4 py-3">

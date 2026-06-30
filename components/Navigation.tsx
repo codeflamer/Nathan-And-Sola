@@ -34,7 +34,7 @@ export default function Navigation() {
           scrolled ? "bg-butter/95 backdrop-blur-sm shadow-sm" : ""
         }`}
       >
-        <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
           {/* Monogram */}
           <a
             href="#hero"
@@ -49,7 +49,7 @@ export default function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-espresso/80 hover:text-rose transition-colors tracking-wide"
+                className="text-sm text-espresso/80 hover:text-rose transition-colors tracking-wide uppercase"
               >
                 {link.label}
               </a>

@@ -13,16 +13,18 @@ export default function Gallery() {
   const prev = useCallback(
     () =>
       setLightboxIndex((i) =>
-        i === null ? null : (i - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length
+        i === null
+          ? null
+          : (i - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length,
       ),
-    []
+    [],
   );
   const next = useCallback(
     () =>
       setLightboxIndex((i) =>
-        i === null ? null : (i + 1) % GALLERY_IMAGES.length
+        i === null ? null : (i + 1) % GALLERY_IMAGES.length,
       ),
-    []
+    [],
   );
 
   // Keyboard navigation
@@ -57,7 +59,7 @@ export default function Gallery() {
   };
 
   return (
-    <section id="gallery" className="bg-cream py-20 md:py-28 px-5">
+    <section id="gallery" className="bg-butter py-20 md:py-28 px-5">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <motion.div
@@ -126,7 +128,10 @@ export default function Gallery() {
             {/* Prev */}
             <button
               className="absolute left-3 md:left-6 z-10 text-butter/70 hover:text-butter p-3"
-              onClick={(e) => { e.stopPropagation(); prev(); }}
+              onClick={(e) => {
+                e.stopPropagation();
+                prev();
+              }}
               aria-label="Previous"
             >
               <ChevronLeft size={32} />
@@ -153,7 +158,10 @@ export default function Gallery() {
             {/* Next */}
             <button
               className="absolute right-3 md:right-6 z-10 text-butter/70 hover:text-butter p-3"
-              onClick={(e) => { e.stopPropagation(); next(); }}
+              onClick={(e) => {
+                e.stopPropagation();
+                next();
+              }}
               aria-label="Next"
             >
               <ChevronRight size={32} />

@@ -38,7 +38,7 @@ function CopyField({ label, value }: { label: string; value: string }) {
       </div>
       <button
         onClick={handleCopy}
-        className="ml-4 p-2.5 rounded-full bg-rose/10 hover:bg-rose/20 text-rose transition-colors flex-shrink-0"
+        className="ml-4 p-2.5 rounded-full bg-rose/10 hover:bg-rose/20 text-rose transition-colors shrink-0"
         aria-label={`Copy ${label}`}
       >
         {copied ? <Check size={16} /> : <Copy size={16} />}
@@ -69,7 +69,7 @@ function BankLogo({ name, logo }: { name: string; logo?: string }) {
     <img
       src={logo}
       alt={`${name} logo`}
-      className="w-10 h-10 rounded-full object-contain bg-white p-1.5 shadow-sm flex-shrink-0"
+      className="w-10 h-10 rounded-full object-contain bg-white p-1.5 shadow-sm shrink-0"
       onError={() => setFailed(true)}
     />
   );
@@ -127,9 +127,9 @@ export default function Gifting() {
           </h2>
           <div className="mx-auto mt-4 w-12 h-px bg-rose/40" />
           <p className="mt-6 text-espresso/70 font-sans text-sm md:text-base leading-relaxed max-w-xl mx-auto">
-            Your presence is the greatest gift of all. If you&apos;d like to bless us
-            additionally, we&apos;d be grateful for a monetary gift — tap the copy
-            icon to quickly grab our account details.
+            Your presence is the greatest gift of all. If you&apos;d like to
+            bless us additionally, we&apos;d be grateful for a monetary gift —
+            tap the copy icon to quickly grab our account details.
           </p>
         </motion.div>
 

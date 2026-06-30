@@ -2,10 +2,10 @@
 
 /* ── Custom theme tokens (Tailwind v4) ── */
 @theme {
-  --color-butter: #FDF0CD;
-  --color-cream: #FBF6EE;
-  --color-rose: #C59283;
-  --color-espresso: #3A2B26;
+  --color-butter: #fdf0cd;
+  --color-cream: #fbf6ee;
+  --color-rose: #c59283;
+  --color-espresso: #3a2b26;
   --color-rose-dark: #a8735e;
 
   --font-serif: "Playfair Display", Georgia, serif;
@@ -18,8 +18,8 @@ html {
 }
 
 body {
-  background-color: #FDF0CD;
-  color: #3A2B26;
+  background-color: #fdf0cd;
+  color: #3a2b26;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
@@ -27,7 +27,7 @@ body {
 /* ── Fine-line divider utility ── */
 .divider {
   border: none;
-  border-top: 1px solid #C59283;
+  border-top: 1px solid #c59283;
   opacity: 0.4;
 }
 
